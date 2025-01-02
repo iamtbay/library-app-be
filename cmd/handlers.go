@@ -114,7 +114,7 @@ func (x *Handlers) login(c *gin.Context) {
 
 	//set cookie
 	c.SetSameSite(http.SameSiteNoneMode)
-	c.SetCookie("accessToken", ss, 3600, "/", "kugulupark.netlify.app", true, true)
+	c.SetCookie("accessToken", ss, 3600, "/", "netlify.app", true, true)
 
 
 	c.JSON(http.StatusOK, gin.H{
@@ -161,7 +161,7 @@ func (x *Handlers) checkUser(c *gin.Context) {
 }
 
 func (x *Handlers) logout(c *gin.Context) {
-	c.SetCookie("accessToken", "", -1, "/", "kugulupark.netlify.app", true, true)
+	c.SetCookie("accessToken", "", -1, "/", "netlify.app", true, true)
 	
 	c.JSON(http.StatusOK, gin.H{
 		"message": "User successfully logged out.",
