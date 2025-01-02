@@ -189,7 +189,10 @@ func (x *Handlers) addDst(c *gin.Context) {
 	}
 	defer openedFile.Close()
 
-	dst := fmt.Sprintf("./public/uploads/%v", file.Filename)
+	//server
+	dst := fmt.Sprintf("/mnt/data/uploads/%v", file.Filename)
+	//local
+	//	dst := fmt.Sprintf("./public/uploads/%v", file.Filename)
 	err = c.SaveUploadedFile(file, dst)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
