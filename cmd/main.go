@@ -5,7 +5,6 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -16,9 +15,9 @@ var (
 )
 
 func main() {
-	if err := godotenv.Load(); err != nil {
-		panic(err)
-	}
+	// if err := godotenv.Load(); err != nil {
+	// 	panic(err)
+	// }
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
 	opts := options.Client().ApplyURI(os.Getenv("MONGO_URI")).SetServerAPIOptions(serverAPI)
 	client, err := mongo.Connect(context.TODO(), opts)
