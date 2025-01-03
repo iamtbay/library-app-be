@@ -31,7 +31,7 @@ func CORSMw() gin.HandlerFunc {
 		origin := c.Request.Header.Get("Origin")
 
 		// Define the allowed origins
-		allowedOrigins := []string{"https://kugulupark.online", "http://localhost:5173"}
+		allowedOrigins := []string{"http://kugulupark.online", "http://localhost:5173"}
 
 		// Check if the origin is in the allowed origins list
 		for _, o := range allowedOrigins {
