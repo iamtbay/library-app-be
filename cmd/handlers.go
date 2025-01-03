@@ -114,7 +114,7 @@ func (x *Handlers) login(c *gin.Context) {
 
 	//set cookie
 	c.SetSameSite(http.SameSiteNoneMode)
-	c.SetCookie("accessToken", ss, 3600, "/", "kugulupark.online", true, true)
+	c.SetCookie("accessToken", ss, 3600, "/", ".kugulupark.online", true, true)
 
 	c.JSON(http.StatusOK, gin.H{
 		"message": "Logged in successfully",
