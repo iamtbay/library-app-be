@@ -15,9 +15,9 @@ var (
 )
 
 func main() {
-	// if err := godotenv.Load(); err != nil {
-	// 	panic(err)
-	// }
+	/* if err := godotenv.Load(); err != nil {
+		panic(err)
+	} */
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
 	opts := options.Client().ApplyURI(os.Getenv("MONGO_URI")).SetServerAPIOptions(serverAPI)
 	client, err := mongo.Connect(context.TODO(), opts)
